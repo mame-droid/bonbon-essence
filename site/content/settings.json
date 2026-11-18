@@ -1,0 +1,33 @@
+{
+  "prices": {
+    "unit": 12.99,
+    "lot2": 25,
+    "lot3": 37,
+    "lot4": 49,
+    "extra": 12
+  },
+  "shipping": {
+    "fr": 4.15,
+    "eu": 6.6,
+    "delay": {
+      "fr": "Nous expédions en général le jour même de la commande, puis la livraison prend 3 à 4 jours ouvrés.",
+      "en": "We usually ship on the day you order, then delivery takes 3 to 4 working days."
+    }
+  },
+  "contact": {
+    "whatsapp": "33749106513",
+    "email": "bonbonessence.contact@gmail.com",
+    "instagram": "https://www.instagram.com/bonbon.essence/",
+    "tiktok": "https://www.tiktok.com/@bonbon.essence"
+  },
+  "story": {
+    "quote": {
+      "fr": "Nos origines, nos traditions, <em>nos essences.</em>",
+      "en": "Our roots, our traditions, <em>our essences.</em>"
+    },
+    "text": {
+      "fr": "Chez Bonbon Essence, chaque détail raconte une histoire. Inspirés par la richesse de nos racines culturelles et des traditions qui nous façonnent, nous célébrons les parfums, les gestes et les rituels qui nous relient à ce que nous sommes. À travers l’élégance et des essences soigneusement choisies, nous faisons entrer un peu de notre culture dans le quotidien.",
+      "en": "At Bonbon Essence, every detail tells a story. Inspired by the beauty of our cultural roots and the traditions that shape us, we celebrate the scents, gestures and rituals that connect us to who we are. Through elegance and carefully chosen essences, we bring a little piece of our culture into everyday life."
+    }
+  }
+}

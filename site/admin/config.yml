@@ -1,0 +1,162 @@
+# Configurazione del pannello /admin (Decap CMS).
+# Ogni modifica salvata dal pannello crea un commit su GitHub e Netlify ripubblica il sito.
+backend:
+  name: github
+  repo: mame-droid/bonbon-essence
+  branch: main
+  commit_messages:
+    update: "Aggiorna {{slug}} dal pannello"
+    uploadMedia: "Carica {{path}} dal pannello"
+    deleteMedia: "Elimina {{path}} dal pannello"
+
+locale: it
+site_url: https://bonbon-essence-anteprima.netlify.app
+display_url: https://bonbon-essence-anteprima.netlify.app
+logo_url: /assets/img/logo.webp
+
+media_folder: site/assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: catalogo
+    label: Profumi
+    editor: { preview: false }
+    files:
+      - name: products
+        label: Profumi in vendita
+        file: site/content/products.json
+        fields:
+          - name: products
+            label: Profumi
+            label_singular: profumo
+            widget: list
+            summary: "{{fields.name}}"
+            fields:
+              - { name: name, label: Nome, widget: string }
+              - name: id
+                label: Indirizzo della pagina
+                widget: string
+                pattern: ['^[a-z0-9-]+$', 'Solo lettere minuscole, numeri e trattini, es. "si-desio"']
+                hint: 'Es. "sucree" diventa bonbonessence.com/#sucree. Non cambiarlo dopo il lancio.'
+              - { name: visible, label: Visibile sul sito, widget: boolean, default: true }
+              - { name: soldout, label: Esaurito, widget: boolean, default: false, hint: "Il profumo resta visibile ma non si può ordinare." }
+              - { name: image, label: Foto principale, widget: image, hint: "Foto quadrata, meglio sotto 1 MB." }
+              - { name: video, label: Video, widget: file, required: false, hint: "Video verticale corto, meglio sotto 3 MB." }
+              - name: badge
+                label: Etichetta sulla foto
+                widget: object
+                collapsed: true
+                fields:
+                  - { name: fr, label: Francese, widget: string, required: false }
+                  - { name: en, label: Inglese, widget: string, required: false }
+              - name: tag
+                label: Frase breve (sotto il nome)
+                widget: object
+                fields:
+                  - { name: fr, label: Francese, widget: string }
+                  - { name: en, label: Inglese, widget: string }
+              - name: slogan
+                label: Slogan (pagina del profumo)
+                widget: object
+                fields:
+                  - { name: fr, label: Francese, widget: string }
+                  - { name: en, label: Inglese, widget: string }
+              - name: desc
+                label: Descrizione
+                widget: object
+                fields:
+                  - { name: fr, label: Francese, widget: text }
+                  - { name: en, label: Inglese, widget: text }
+              - name: best
+                label: Ideale per…
+                widget: object
+                hint: 'Continua la frase "Idéal pour :" / "Best for:"'
+                fields:
+                  - { name: fr, label: Francese, widget: string }
+                  - { name: en, label: Inglese, widget: string }
+              - name: family
+                label: Famiglia olfattiva
+                widget: object
+                fields:
+                  - { name: fr, label: Francese, widget: string }
+                  - { name: en, label: Inglese, widget: string }
+              - name: notes
+                label: Note olfattive
+                widget: object
+                collapsed: true
+                fields:
+                  - name: top
+                    label: Note di testa
+                    widget: object
+                    fields:
+                      - { name: fr, label: Francese, widget: string }
+                      - { name: en, label: Inglese, widget: string }
+                  - name: heart
+                    label: Note di cuore
+                    widget: object
+                    fields:
+                      - { name: fr, label: Francese, widget: string }
+                      - { name: en, label: Inglese, widget: string }
+                  - name: base
+                    label: Note di fondo
+                    widget: object
+                    fields:
+                      - { name: fr, label: Francese, widget: string }
+                      - { name: en, label: Inglese, widget: string }
+              - { name: ingredients, label: Ingredienti (lista INCI), widget: text, required: false, hint: "Copiala esattamente dai documenti del fornitore. Se vuoto, il sito scrive che la lista arriva presto." }
+              - { name: keys, label: Parole per la ricerca, widget: string, required: false, hint: "Parole in più per trovare il profumo, separate da spazi." }
+
+  - name: impostazioni
+    label: Prezzi, spedizioni e testi
+    editor: { preview: false }
+    files:
+      - name: settings
+        label: Impostazioni del negozio
+        file: site/content/settings.json
+        fields:
+          - name: prices
+            label: Prezzi (validi per tutti i profumi, anche misti)
+            widget: object
+            fields:
+              - { name: unit, label: 1 flacone (€), widget: number, value_type: float, step: 0.01, min: 0 }
+              - { name: lot2, label: 2 flaconi (€), widget: number, value_type: float, step: 0.01, min: 0 }
+              - { name: lot3, label: 3 flaconi (€), widget: number, value_type: float, step: 0.01, min: 0 }
+              - { name: lot4, label: 4 flaconi (€), widget: number, value_type: float, step: 0.01, min: 0 }
+              - { name: extra, label: Ogni flacone oltre il 4° (€), widget: number, value_type: float, step: 0.01, min: 0 }
+          - name: shipping
+            label: Spedizione Mondial Relay
+            widget: object
+            fields:
+              - { name: fr, label: Francia (€), widget: number, value_type: float, step: 0.01, min: 0 }
+              - { name: eu, label: Resto d'Europa (€), widget: number, value_type: float, step: 0.01, min: 0 }
+              - name: delay
+                label: Tempi di spedizione e consegna
+                widget: object
+                fields:
+                  - { name: fr, label: Francese, widget: text }
+                  - { name: en, label: Inglese, widget: text }
+          - name: contact
+            label: Contatti
+            widget: object
+            fields:
+              - { name: whatsapp, label: Numero WhatsApp per gli ordini, widget: string, pattern: ['^[0-9]{8,15}$', 'Solo cifre con prefisso, senza + né spazi, es. 33612345678'], hint: "Formato internazionale senza + e senza spazi, es. 33612345678" }
+              - { name: email, label: Email di contatto, widget: string }
+              - { name: instagram, label: Link Instagram, widget: string }
+              - { name: tiktok, label: Link TikTok, widget: string }
+          - name: story
+            label: Notre histoire
+            widget: object
+            fields:
+              - name: quote
+                label: Frase grande
+                widget: object
+                hint: "Puoi mettere una parte in corsivo dorato così: <em>parole</em>"
+                fields:
+                  - { name: fr, label: Francese, widget: string }
+                  - { name: en, label: Inglese, widget: string }
+              - name: text
+                label: Testo
+                widget: object
+                fields:
+                  - { name: fr, label: Francese, widget: text }
+                  - { name: en, label: Inglese, widget: text }

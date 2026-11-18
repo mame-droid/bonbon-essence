@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<!--SEO-->
+<title>Bonbon Essence</title>
+<meta name="description" content="Bonbon Essence — huiles parfumées de luxe. Heritage. Elegance. Essence.">
+<!--/SEO-->
+<link rel="icon" href="/assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/icons/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<meta name="theme-color" content="#FBF6F2">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<style>
+body{margin:0}
+/* Layout: colonna centrale 1120px; header con logo al centro come nel brief; viste "home" e "prodotto" via #hash.
+   Tema unico chiaro, voluto: è l'identità nude del brand (colori presi dal logo). */
+:root {
+  --bg: #FBF6F2;
+  --surface: #FFFCF9;
+  --nude: #F3DFCE;
+  --blush: #EAD2C2;
+  --ink: #3A2315;
+  --muted: #6B5141;
+  --bronze: #85562C;
+  --gold: #C8964F;
+  --line: #E6D3C4;
+  --display: "Cormorant Garamond", "Times New Roman", Georgia, serif;
+  --body: "Jost", "Helvetica Neue", Arial, sans-serif;
+  --ease: cubic-bezier(.2,.7,.2,1);
+  --radius: 22px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; animation: none !important; } }
+body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 1.0625rem; line-height: 1.65; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--bg); }
+img, video { display: block; max-width: 100%; }
+a { color: inherit; }
+button { font: inherit; color: inherit; cursor: pointer; }
+h1, h2, h3 { font-family: var(--display); font-weight: 500; line-height: 1.08; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+:focus-visible { outline: 2px solid var(--bronze); outline-offset: 3px; border-radius: 6px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip { position: absolute; left: 16px; top: -60px; z-index: 50; background: var(--ink); color: var(--bg); padding: .6rem 1rem; border-radius: 999px; text-decoration: none; }
+.skip:focus { top: calc(12px + env(safe-area-inset-top, 0px)); }
+
+.gutter { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.container { max-width: 1120px; margin: 0 auto; }
+.eyebrow { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--bronze); font-weight: 500; }
+.section { padding-block: clamp(4rem, 9vw, 7rem); }
+.section-head { display: grid; gap: .8rem; justify-items: center; text-align: center; margin-bottom: clamp(2rem, 5vw, 3.5rem); }
+.section-head h2 { font-size: clamp(2.1rem, 5vw, 3.4rem); }
+.section-head h2 em { color: var(--bronze); }
+.offer { margin-top: .4rem; padding: .45rem 1rem; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-size: .9rem; }
+.offer-note { font-size: .92rem; color: var(--muted); margin-top: -.4rem; }
+.total.disc { font-size: .95rem; color: var(--bronze); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .6rem; min-height: 48px; padding: .75rem 1.5rem; border-radius: 999px; border: 1px solid var(--ink); background: var(--ink); color: var(--bg); font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 500; text-decoration: none; transition: background .3s var(--ease), color .3s var(--ease); }
+.btn:hover { background: var(--bronze); border-color: var(--bronze); }
+.btn--ghost { background: transparent; color: var(--ink); }
+.btn--ghost:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.btn svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.btn[disabled] { opacity: .5; cursor: not-allowed; }
+
+/* Header (brief: Home a sinistra, logo al centro con il nome sotto, icone a destra) */
+.header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.header__in { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem; padding-block: .9rem; }
+.nav { display: flex; gap: 1.6rem; }
+.nav a { font-size: .78rem; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; padding-block: .4rem; border-bottom: 1px solid transparent; }
+.nav a:hover { border-color: var(--gold); }
+.brand { display: grid; justify-items: center; gap: .35rem; text-decoration: none; }
+.brand img { width: 62px; height: 62px; }
+.brand span { font-family: var(--display); font-size: 1.15rem; letter-spacing: .24em; text-transform: uppercase; }
+.tools { display: flex; justify-content: flex-end; align-items: center; gap: .4rem; }
+.lang { display: flex; border: 1px solid var(--line); border-radius: 999px; padding: 3px; margin-right: .4rem; }
+.lang button { border: 0; background: transparent; padding: .35rem .7rem; min-width: 44px; min-height: 36px; border-radius: 999px; font-size: .75rem; letter-spacing: .12em; }
+.lang button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.icon-btn { position: relative; width: 44px; height: 44px; border: 0; background: transparent; border-radius: 50%; display: grid; place-items: center; }
+.icon-btn:hover { background: var(--nude); }
+.icon-btn svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.4; }
+.count { position: absolute; top: 4px; right: 2px; min-width: 18px; height: 18px; padding: 0 5px; border-radius: 999px; background: var(--bronze); color: #fff; font-size: .68rem; line-height: 18px; text-align: center; font-weight: 500; }
+@media (max-width: 820px) {
+  .header__in { grid-template-columns: 1fr auto; }
+  .nav { display: none; }
+  .brand { grid-auto-flow: column; justify-items: start; align-items: center; gap: .7rem; justify-self: start; }
+  .brand img { width: 44px; height: 44px; }
+  .brand span { font-size: .95rem; letter-spacing: .18em; }
+  .lang { margin-right: 0; }
+}
+@media (max-width: 420px) { .brand { gap: .5rem; } .brand span { font-size: .74rem; letter-spacing: .1em; } .lang button { min-width: 40px; padding-inline: .5rem; } }
+
+/* Hero (brief: foto a pillola, poi titolo, slogan, testo, CTA) */
+.hero { padding-block: clamp(1.5rem, 4vw, 2.5rem) clamp(3rem, 7vw, 5rem); }
+.hero__pill { position: relative; border-radius: 999px; overflow: hidden; height: clamp(200px, 34vh, 360px); box-shadow: 0 30px 60px -35px rgba(58,35,21,.45); }
+.hero__pill { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.hero__pill img { width: 100%; height: 100%; object-fit: cover; }
+.hero__copy { display: grid; justify-items: center; text-align: center; gap: 1rem; margin-top: clamp(1.8rem, 4vw, 2.6rem); }
+.hero h1 { font-size: clamp(2.8rem, 8vw, 5.2rem); letter-spacing: .06em; text-transform: uppercase; font-weight: 400; }
+.hero__tag { font-family: var(--display); font-style: italic; font-size: clamp(1.3rem, 2.6vw, 1.7rem); color: var(--bronze); }
+.hero__lead { max-width: 56ch; color: var(--muted); }
+.hero__ctas { display: flex; flex-wrap: wrap; gap: .8rem; justify-content: center; margin-top: .6rem; }
+@media (max-width: 640px) { .hero__pill { border-radius: 200px 200px 28px 28px; height: 300px; } }
+
+/* Collection */
+.collection { background: linear-gradient(var(--bg), var(--nude) 60%, var(--bg)); }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.4rem; }
+.card { display: grid; gap: .9rem; align-content: start; min-width: 0; }
+.card__media { position: relative; aspect-ratio: 4 / 5; border-radius: var(--radius); overflow: hidden; background: var(--blush); border: 0; padding: 0; width: 100%; }
+.card__media img, .card__media video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .5s var(--ease), transform .8s var(--ease); }
+.card__media video { opacity: 0; }
+.card.is-playing video { opacity: 1; }
+.card:hover .card__media img { transform: scale(1.03); }
+.badge { position: absolute; top: 12px; left: 12px; z-index: 2; background: var(--surface); color: var(--bronze); font-size: .68rem; letter-spacing: .14em; text-transform: uppercase; padding: .3rem .7rem; border-radius: 999px; font-weight: 500; }
+.card__row { display: flex; justify-content: space-between; align-items: baseline; gap: .6rem; }
+.card h3 { font-size: 1.45rem; text-transform: uppercase; letter-spacing: .05em; }
+.price { font-variant-numeric: tabular-nums; color: var(--muted); white-space: nowrap; }
+.card__tag { font-family: var(--display); font-style: italic; font-size: 1.15rem; color: var(--bronze); min-height: 2.6em; }
+.card__actions { display: grid; gap: .5rem; }
+.card__actions .btn { width: 100%; padding-inline: 1rem; font-size: .74rem; }
+@media (max-width: 980px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) {
+  .grid { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 78%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: .5rem; scrollbar-width: none; }
+  .grid::-webkit-scrollbar { display: none; }
+  .card { scroll-snap-align: center; }
+}
+
+/* Fragrances (brief: 4 descrizioni con "Best for") */
+.frags { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem; }
+.frag { display: grid; gap: .8rem; align-content: start; padding-top: 1.2rem; border-top: 1px solid var(--gold); min-width: 0; }
+.frag h3 { font-size: 1.5rem; text-transform: uppercase; letter-spacing: .05em; }
+.frag__slogan { font-family: var(--display); font-style: italic; font-size: 1.2rem; color: var(--bronze); }
+.frag p { color: var(--muted); font-size: 1rem; }
+.family { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+.best { font-size: .98rem; color: var(--muted); }
+.best strong { color: var(--ink); font-weight: 500; }
+.frag a { justify-self: start; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; text-underline-offset: 6px; text-decoration-color: var(--gold); padding-block: .5rem; }
+@media (max-width: 980px) { .frags { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .frags { grid-template-columns: 1fr; } }
+
+/* Story */
+.story { background: var(--ink); color: var(--nude); text-align: center; }
+.story .container { display: grid; gap: 1.4rem; justify-items: center; max-width: 820px; }
+.story .eyebrow { color: var(--gold); }
+.story blockquote { margin: 0; font-family: var(--display); font-size: clamp(1.7rem, 4vw, 2.6rem); line-height: 1.25; }
+.story blockquote em { color: var(--gold); }
+.story p { color: #E2CDBE; max-width: 60ch; }
+.placeholder { display: inline-block; border: 1px dashed currentColor; border-radius: 8px; padding: .1rem .5rem; font-size: .8rem; letter-spacing: .06em; opacity: .85; }
+
+/* Ritual */
+.ritual { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+.ritual__img { border-radius: 260px 260px var(--radius) var(--radius); overflow: hidden; aspect-ratio: 4 / 5; }
+.ritual__img video { width: 100%; height: 100%; object-fit: cover; }
+.ritual__copy { display: grid; gap: 1.2rem; min-width: 0; }
+.ritual__copy h2 { font-size: clamp(2.1rem, 5vw, 3.2rem); }
+.ritual__copy h2 em { color: var(--bronze); }
+.steps { list-style: none; padding: 0; margin: .6rem 0 0; display: grid; gap: 0; counter-reset: s; }
+.steps li { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; padding-block: 1.1rem; border-top: 1px solid var(--line); counter-increment: s; }
+.steps li::before { content: counter(s, decimal-leading-zero); font-family: var(--display); font-style: italic; font-size: 1.3rem; color: var(--bronze); }
+.steps h3 { font-size: 1.4rem; margin-bottom: .2rem; }
+.steps p { color: var(--muted); font-size: 1rem; }
+@media (max-width: 820px) { .ritual { grid-template-columns: 1fr; } .ritual__img { max-width: 440px; width: 100%; justify-self: center; } }
+
+/* FAQ */
+.faq { max-width: 780px; margin: 0 auto; display: grid; gap: .7rem; }
+.faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.1rem 1.3rem; font-weight: 500; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-family: var(--display); font-size: 1.6rem; line-height: 1; color: var(--bronze); transition: transform .3s var(--ease); }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { padding: 0 1.3rem 1.2rem; color: var(--muted); }
+
+/* Product view */
+.product { padding-block: clamp(1.5rem, 4vw, 3rem) clamp(4rem, 8vw, 6rem); }
+.back { display: inline-flex; align-items: center; gap: .5rem; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; padding-block: .6rem; margin-bottom: 1rem; }
+.back:hover { color: var(--bronze); }
+.pgrid { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.pmedia { display: grid; grid-template-columns: 1fr .55fr; gap: 1rem; align-items: end; }
+.pmedia > div { border-radius: var(--radius); overflow: hidden; background: var(--blush); }
+.pmedia .main { aspect-ratio: 4 / 5; }
+.pmedia .main img { width: 100%; height: 100%; object-fit: cover; }
+.pmedia .vid { aspect-ratio: 9 / 16; }
+.pmedia .vid video { width: 100%; height: 100%; object-fit: cover; }
+.pinfo { display: grid; gap: 1.1rem; min-width: 0; position: sticky; top: calc(120px + env(safe-area-inset-top, 0px)); }
+.pinfo h1 { font-size: clamp(2.6rem, 6vw, 4rem); text-transform: uppercase; letter-spacing: .04em; font-weight: 400; }
+.pinfo .slogan { font-family: var(--display); font-style: italic; font-size: 1.5rem; color: var(--bronze); margin-top: -.4rem; }
+.pinfo .desc { color: var(--muted); }
+.buy { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem; padding-block: 1.1rem; border-block: 1px solid var(--line); }
+.buy .amount { font-family: var(--display); font-size: 2rem; font-variant-numeric: tabular-nums; margin-right: auto; }
+.buy .amount small { font-family: var(--body); font-size: .85rem; color: var(--muted); margin-left: .4rem; }
+.qty { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+.qty button { width: 44px; height: 44px; border: 0; background: transparent; border-radius: 50%; font-size: 1.2rem; }
+.qty output { min-width: 1.6rem; text-align: center; font-variant-numeric: tabular-nums; }
+.facts { display: grid; gap: 0; }
+.facts details { border-bottom: 1px solid var(--line); }
+.facts summary { cursor: pointer; padding: .95rem 0; font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 500; list-style: none; display: flex; justify-content: space-between; }
+.facts summary::-webkit-details-marker { display: none; }
+.facts summary::after { content: "+"; color: var(--bronze); }
+.facts details[open] summary::after { content: "–"; }
+.facts .nk { display: inline-block; min-width: 4.6rem; color: var(--ink); font-weight: 500; font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; }
+.facts details > div { padding-bottom: 1rem; color: var(--muted); font-size: 1rem; display: grid; gap: .5rem; }
+.more { margin-top: clamp(4rem, 8vw, 6rem); }
+.more .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 860px) {
+  .pgrid { grid-template-columns: 1fr; }
+  .pinfo { position: static; }
+  .more .grid { grid-template-columns: none; }
+}
+@media (min-width: 561px) and (max-width: 860px) { .more .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Footer */
+.footer { border-top: 1px solid var(--line); background: linear-gradient(var(--bg), var(--nude)); }
+.footer__top { display: grid; grid-template-columns: 1fr; gap: 2.5rem; align-items: end; padding-block: clamp(3.5rem, 8vw, 5.5rem) 2.5rem; }
+.claim { font-size: clamp(2.3rem, 5.5vw, 3.8rem); text-transform: uppercase; font-weight: 400; letter-spacing: .02em; }
+.claim em { display: block; text-transform: none; color: var(--bronze); }
+.nl { display: grid; gap: .7rem; min-width: 0; }
+.nl label { font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.nl__row { display: flex; gap: .5rem; background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 4px; }
+.nl input[type=email] { flex: 1; min-width: 0; width: 100%; border: 0; background: transparent; padding: 0 1rem; font: inherit; color: var(--ink); }
+.nl input[type=email]:focus { outline: none; }
+.nl__row:focus-within { box-shadow: 0 0 0 2px var(--bronze); }
+.nl small { color: var(--muted); font-size: .85rem; }
+.nl .ok { color: var(--bronze); font-weight: 500; }
+.footer__bottom { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.2rem; padding-block: 1.5rem 2.5rem; border-top: 1px solid var(--line); font-size: .88rem; color: var(--muted); }
+.socials { display: flex; gap: .5rem; }
+.socials a { display: inline-flex; align-items: center; gap: .5rem; padding: .5rem .9rem; min-height: 44px; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; color: var(--ink); background: var(--surface); }
+.socials svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+.legal { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; }
+.legal a { text-underline-offset: 4px; }
+@media (max-width: 760px) { .footer__top { grid-template-columns: minmax(0, 1fr); } .nl .btn { padding-inline: 1.1rem; } }
+
+/* Dialogs: carrello e ricerca */
+dialog { border: 0; padding: 0; background: var(--surface); color: var(--ink); max-height: 100dvh; }
+dialog::backdrop { background: rgba(58,35,21,.35); backdrop-filter: blur(6px); }
+.drawer { margin: 0 0 0 auto; height: 100dvh; width: min(440px, 100vw); display: none; grid-template-rows: auto 1fr auto; }
+.drawer[open] { display: grid; }
+.drawer__head, .drawer__foot { padding: 1.2rem 1.4rem; padding-right: max(1.4rem, env(safe-area-inset-right, 0px)); }
+.drawer__head { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--line); padding-top: max(1.2rem, env(safe-area-inset-top, 0px)); }
+.drawer__head h2 { font-size: 1.8rem; }
+.drawer__list { overflow: auto; padding: .5rem 1.4rem; }
+.line { display: grid; grid-template-columns: 72px 1fr auto; gap: 1rem; align-items: center; padding-block: 1rem; border-bottom: 1px solid var(--line); }
+.line img { width: 72px; height: 72px; object-fit: cover; border-radius: 14px; }
+.line h3 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: .04em; }
+.line .rm { border: 0; background: none; padding: .3rem 0; font-size: .82rem; text-decoration: underline; text-underline-offset: 3px; color: var(--muted); }
+.line .qty button { width: 36px; height: 36px; }
+.empty { padding: 3rem 0; text-align: center; display: grid; gap: 1rem; justify-items: center; color: var(--muted); }
+.empty em { font-family: var(--display); font-size: 1.6rem; color: var(--ink); }
+.drawer__foot { border-top: 1px solid var(--line); display: grid; gap: .8rem; padding-bottom: max(1.2rem, env(safe-area-inset-bottom, 0px)); }
+.total { display: flex; justify-content: space-between; font-size: 1.1rem; font-variant-numeric: tabular-nums; }
+.total strong { font-weight: 500; }
+.drawer__foot small { color: var(--muted); }
+.ship { border: 0; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+.ship legend { font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: .4rem; padding: 0; }
+.ship label { display: flex; align-items: center; gap: .5rem; min-height: 44px; padding: .4rem .7rem; border: 1px solid var(--line); border-radius: 14px; cursor: pointer; font-size: .92rem; line-height: 1.25; }
+.ship label:has(input:checked) { border-color: var(--bronze); background: var(--nude); }
+.ship label .price { margin-left: auto; white-space: nowrap; }
+.ship input { accent-color: var(--bronze); width: 18px; height: 18px; margin: 0; }
+.total.grand { font-size: 1.2rem; border-top: 1px solid var(--line); padding-top: .7rem; }
+#checkout[aria-disabled="true"] { opacity: .5; pointer-events: none; }
+.search { margin: max(12px, env(safe-area-inset-top, 0px)) auto auto; width: min(720px, calc(100vw - 24px)); border-radius: 24px; }
+.search__field { display: flex; align-items: center; gap: .6rem; padding: .6rem .6rem .6rem 1.2rem; border-bottom: 1px solid var(--line); }
+.search__field svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.5; flex: none; }
+.search input { flex: 1; min-width: 0; border: 0; background: transparent; font: inherit; font-size: 1.1rem; color: var(--ink); padding: .6rem 0; }
+.search input:focus { outline: none; }
+.results { padding: .6rem; display: grid; gap: .3rem; max-height: 60vh; overflow: auto; }
+.result { display: grid; grid-template-columns: 56px 1fr auto; gap: 1rem; align-items: center; padding: .6rem; border-radius: 16px; text-decoration: none; }
+.result:hover, .result:focus-visible { background: var(--nude); }
+.result img { width: 56px; height: 56px; border-radius: 12px; object-fit: cover; }
+.result h3 { font-size: 1.2rem; text-transform: uppercase; }
+.result p { font-size: .9rem; color: var(--muted); }
+.none { padding: 1.5rem; color: var(--muted); text-align: center; }
+
+.toast { visibility: hidden; position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translate(-50%, 150%); z-index: 40; background: var(--ink); color: var(--bg); padding: .8rem 1.3rem; border-radius: 999px; font-size: .92rem; transition: transform .45s var(--ease), visibility .45s; max-width: calc(100vw - 32px); text-align: center; }
+.toast.on { visibility: visible; transform: translate(-50%, 0); }
+.demo-note { background: var(--nude); color: var(--muted); font-size: .82rem; text-align: center; padding-block: .45rem; }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main" data-i18n="skip">Aller au contenu</a>
+<aside class="demo-note gutter" aria-label="Démo" data-i18n="demo">Version de démonstration · textes en pointillés à confirmer</aside>
+
+<header class="header gutter">
+  <div class="header__in container">
+    <nav class="nav" aria-label="Navigation principale" data-i18n-aria="navLabel">
+      <a href="/#accueil" data-i18n="nav.home">Accueil</a>
+      <a href="/#collection" data-i18n="nav.collection">Collection</a>
+      <a href="/#histoire" data-i18n="nav.story">Notre histoire</a>
+    </nav>
+    <a class="brand" href="/" aria-label="Bonbon Essence, accueil">
+      <img src="/assets/img/logo.webp" alt="" width="62" height="62">
+      <span>Bonbon Essence</span>
+    </a>
+    <div class="tools">
+      <div class="lang" role="group" aria-label="Langue">
+        <button type="button" data-lang="fr" lang="fr">FR</button>
+        <button type="button" data-lang="en" lang="en">EN</button>
+      </div>
+      <button class="icon-btn" type="button" id="openSearch" aria-label="Rechercher" data-i18n-aria="a.search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      </button>
+      <button class="icon-btn" type="button" id="openCart" aria-label="Panier" data-i18n-aria="a.cart">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l-1.2 12.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8L5 8Z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+        <span class="count" id="count" hidden>0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ===== HOME ===== -->
+  <div id="viewHome">
+    <section class="hero gutter" id="accueil">
+      <div class="container">
+        <div class="hero__pill" id="heroPill">
+          <img src="/assets/img/sucree.webp" alt="" width="621" height="625" fetchpriority="high">
+          <img src="/assets/img/si-desio.webp" alt="" width="621" height="618">
+          <img src="/assets/img/mademoiselle-paris.webp" alt="" width="621" height="618">
+          <img src="/assets/img/vanilla.webp" alt="" width="621" height="625">
+        </div>
+        <div class="hero__copy">
+          <span class="eyebrow" data-i18n="hero.eyebrow">Huiles parfumées de luxe</span>
+          <h1>Bonbon Essence</h1>
+          <p class="hero__tag">Heritage. Elegance. Essence.</p>
+          <p class="hero__lead" data-i18n="hero.lead">Née d'un amour pour le parfum, la beauté et l'héritage, Bonbon Essence réunit des senteurs et des traditions qui font partie de vos rituels du quotidien.</p>
+          <div class="hero__ctas">
+            <a class="btn" href="#collection"><span data-i18n="hero.cta">Découvrir notre essence</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="collection section gutter" id="collection" aria-labelledby="colTitle">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="col.eyebrow">La collection</span>
+          <h2 id="colTitle" data-i18n="col.title">Quatre parfums. <em>Quatre identités.</em></h2>
+          <p class="offer" data-i18n="offer">Offre lot : 2 pour 25 € · 3 pour 37 € · 4 pour 49 €, puis 12 € le flacon. Parfums au choix</p>
+        </div>
+        <div class="grid" id="grid"></div>
+      </div>
+    </section>
+
+    <section class="section gutter" id="fragrances" aria-labelledby="fragTitle">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="frag.eyebrow">Les fragrances</span>
+          <h2 id="fragTitle" data-i18n="frag.title">Chaque parfum <em>raconte une histoire.</em></h2>
+        </div>
+        <div class="frags" id="frags"></div>
+      </div>
+    </section>
+
+    <section class="story section gutter" id="histoire" aria-labelledby="storyTitle">
+      <div class="container">
+        <span class="eyebrow" id="storyTitle" data-i18n="story.eyebrow">Notre histoire</span>
+        <blockquote data-i18n="story.quote">Nos origines, nos traditions, <em>nos essences.</em></blockquote>
+        <p data-i18n="story.text"></p>
+      </div>
+    </section>
+
+    <section class="section gutter" id="rituel" aria-labelledby="ritualTitle">
+      <div class="container ritual">
+        <div class="ritual__img"><video id="ritualVideo" src="/assets/video/sucree.mp4" poster="/assets/img/rituel-poster.webp" muted loop playsinline preload="none" aria-label="Application d'une huile parfumée sur le bras" data-i18n-aria="ritual.alt"></video></div>
+        <div class="ritual__copy">
+          <span class="eyebrow" data-i18n="ritual.eyebrow">Le rituel</span>
+          <h2 id="ritualTitle" data-i18n="ritual.title">Une goutte. <em>Un sillage.</em> Un souvenir.</h2>
+          <ol class="steps">
+            <li><div><h3 data-i18n="s1.h">Déposer</h3><p data-i18n="s1.p">Une à deux gouttes sur les points de pulsation : poignets, cou, derrière les oreilles.</p></div></li>
+            <li><div><h3 data-i18n="s2.h">Presser</h3><p data-i18n="s2.p">Tapotez doucement, sans frotter, pour laisser l'huile fondre sur la peau.</p></div></li>
+            <li><div><h3 data-i18n="s3.h">Savourer</h3><p data-i18n="s3.p">Concentrée et intime, la fragrance reste près de votre peau tout au long de la journée.</p></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gutter" id="faq" aria-labelledby="faqTitle">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" data-i18n="faq.eyebrow">Questions fréquentes</span>
+          <h2 id="faqTitle" data-i18n="faq.title">Tout savoir sur <em>nos huiles.</em></h2>
+        </div>
+        <div class="faq">
+          <details><summary data-i18n="q1">Qu'est-ce qu'une huile parfumée ?</summary><p data-i18n="a1">Un parfum concentré dans une base huileuse, sans alcool. Il se pose directement sur la peau et laisse un sillage plus intime et enveloppant qu'une eau de parfum.</p></details>
+          <details><summary data-i18n="q2">Comment l'appliquer ?</summary><p data-i18n="a2">Avec le compte-gouttes, déposez une à deux gouttes sur les poignets, le cou ou le décolleté, puis tapotez sans frotter.</p></details>
+          <details><summary data-i18n="q3">Quelle est la contenance d'un flacon ?</summary><p data-i18n="a3">Chaque flacon contient 15 ml, avec un compte-gouttes pour un dosage précis.</p></details>
+          <details><summary data-i18n="q4">Quels sont les délais et frais de livraison ?</summary><p><span data-i18n="a4"></span></p></details>
+          <details><summary data-i18n="q5">Puis-je retourner ou échanger un flacon ?</summary><p data-i18n="a5"></p></details>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- ===== PRODOTTO ===== -->
+  <div id="viewProduct" hidden></div>
+</main>
+
+<footer class="footer gutter">
+  <div class="container">
+    <div class="footer__top">
+      <h2 class="claim" data-i18n="claim">Plus qu'un parfum. <em>Une essence.</em></h2>
+    </div>
+    <div class="footer__bottom">
+      <div class="socials">
+        <a href="https://www.instagram.com/bonbon.essence/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r=".5"/></svg>Instagram</a>
+        <a href="https://www.tiktok.com/@bonbon.essence" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3.5v11.2a3.8 3.8 0 1 1-3.8-3.8"/><path d="M14 3.5c.4 2.6 2.3 4.5 5 4.7"/></svg>TikTok</a>
+      </div>
+      <nav class="legal" aria-label="Informations légales" data-i18n-aria="legalLabel">
+        <a href="/mentions-legales.html" data-i18n="l1">Mentions légales</a>
+        <a href="/cgv.html" data-i18n="l2">CGV</a>
+        <a href="/confidentialite.html" data-i18n="l3">Confidentialité</a>
+        <a href="/livraison-retours.html" data-i18n="l4">Livraison et retours</a>
+        <a id="mailLink" href="mailto:bonbonessence.contact@gmail.com">bonbonessence.contact@gmail.com</a>
+      </nav>
+      <span>© <span id="year">2026</span> Bonbon Essence</span>
+    </div>
+  </div>
+</footer>
+
+<dialog class="drawer" id="cart" aria-labelledby="cartTitle">
+  <div class="drawer__head">
+    <h2 id="cartTitle" data-i18n="cart.title">Votre panier</h2>
+    <button class="icon-btn" type="button" data-close aria-label="Fermer" data-i18n-aria="a.close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="drawer__list" id="cartList"></div>
+  <div class="drawer__foot">
+    <div class="total disc" id="discRow" hidden><span data-i18n="cart.disc">Remise lot</span><span id="cartDisc"></span></div>
+    <div class="total"><span data-i18n="cart.sub">Sous-total</span><span id="cartTotal">0 €</span></div>
+    <fieldset class="ship">
+      <legend data-i18n="cart.ship">Livraison en point relais Mondial Relay</legend>
+      <label><input type="radio" name="ship" id="shipFr" value="fr" checked> <span data-i18n="ship.fr">France</span><span class="price" data-ship="fr"></span></label>
+      <label><input type="radio" name="ship" id="shipEu" value="eu"> <span data-i18n="ship.eu">Europe</span><span class="price" data-ship="eu"></span></label>
+    </fieldset>
+    <div class="total grand"><span data-i18n="cart.total">Total</span><strong id="cartGrand">0 €</strong></div>
+    <small data-i18n="cart.note">Votre commande s'ouvre dans WhatsApp. Nous vous confirmons la commande et le moyen de paiement, puis nous expédions.</small>
+    <a class="btn" id="checkout" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19l-4 1Z"/></svg><span data-i18n="cart.checkout">Commander sur WhatsApp</span></a>
+  </div>
+</dialog>
+
+<dialog class="search" id="search" aria-label="Rechercher" data-i18n-aria="a.search">
+  <div class="search__field">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+    <label for="q" class="sr-only" data-i18n="a.search">Rechercher</label>
+    <input id="q" type="search" autocomplete="off" placeholder="Un parfum, une note… vanille, rose" data-i18n-ph="search.ph">
+    <button class="icon-btn" type="button" data-close aria-label="Fermer" data-i18n-aria="a.close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  </div>
+  <div class="results" id="results" aria-live="polite"></div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const T = {
+  fr: {
+    offer: () => { const P = CFG.prices; return `Offre lot : 2 pour ${euro(P.lot2)} · 3 pour ${euro(P.lot3)} · 4 pour ${euro(P.lot4)}, puis ${euro(P.extra)} le flacon. Parfums au choix`; }, "cart.disc": "Remise lot",
+    q5: "Puis-je retourner ou échanger un flacon ?", a5: () => `Oui, tant que le flacon n'a pas été ouvert. Écrivez-nous à <a href="mailto:${CFG.contact.email}">${CFG.contact.email}</a> et nous organisons le retour ou l'échange.`,
+    skip: "Aller au contenu", demo: "Version de démonstration · textes en pointillés à confirmer",
+    navLabel: "Navigation principale", "nav.home": "Accueil", "nav.collection": "Collection", "nav.story": "Notre histoire",
+    "hero.eyebrow": "Huiles parfumées de luxe",
+    "hero.lead": "Née d'un amour pour le parfum, la beauté et l'héritage, Bonbon Essence réunit des senteurs et des traditions qui font partie de vos rituels du quotidien.",
+    "hero.cta": "Découvrir notre essence",
+    "col.eyebrow": "La collection", "col.title": "Quatre parfums. <em>Quatre identités.</em>",
+    "frag.eyebrow": "Les fragrances", "frag.title": "Chaque parfum <em>raconte une histoire.</em>",
+    "story.eyebrow": "Notre histoire", "story.quote": "Nos origines, nos traditions, <em>nos essences.</em>",
+    "story.text": "Pour nous, l'héritage, ce sont nos origines et les traditions qu'on nous a transmises : des senteurs, des gestes, des rituels. Nos huiles parfumées en sont la première expression. Bientôt, nous vous ferons aussi découvrir des produits plus traditionnels, comme le thiouraye.",
+    "ph.story": "Texte à valider", "ph.ship": "Délais à confirmer", "ph.inci": "Liste complète des ingrédients disponible prochainement.", soldout: "Épuisé",
+    "ritual.eyebrow": "Le rituel", "ritual.title": "Une goutte. <em>Un sillage.</em> Un souvenir.", "ritual.alt": "Application d'une huile parfumée sur le bras",
+    "s1.h": "Déposer", "s1.p": "Une à deux gouttes sur les points de pulsation : poignets, cou, derrière les oreilles.",
+    "s2.h": "Presser", "s2.p": "Tapotez doucement, sans frotter, pour laisser l'huile fondre sur la peau.",
+    "s3.h": "Savourer", "s3.p": "Concentrée et intime, la fragrance reste près de votre peau tout au long de la journée.",
+    "faq.eyebrow": "Questions fréquentes", "faq.title": "Tout savoir sur <em>nos huiles.</em>",
+    q1: "Qu'est-ce qu'une huile parfumée ?", a1: "Un parfum concentré dans une base huileuse, sans alcool. Il se pose directement sur la peau et laisse un sillage plus intime et enveloppant qu'une eau de parfum.",
+    q2: "Comment l'appliquer ?", a2: "Avec le compte-gouttes, déposez une à deux gouttes sur les poignets, le cou ou le décolleté, puis tapotez sans frotter.",
+    q3: "Quelle est la contenance d'un flacon ?", a3: "Chaque flacon contient 15 ml, avec un compte-gouttes pour un dosage précis.",
+    q4: "Quels sont les délais et frais de livraison ?", a4: () => `Nous livrons en point relais Mondial Relay dans toute l'Europe : ${euro(CFG.shipping.fr)} en France, ${euro(CFG.shipping.eu)} vers les autres pays européens. ${L(CFG.shipping.delay)}`,
+    claim: "Plus qu'un parfum. <em>Une essence.</em>",
+    "nl.label": "Nouveautés et offres privées", "nl.ph": "Votre e-mail", "nl.btn": "S'inscrire",
+    "nl.note": "Désinscription en un clic. Vos données restent chez nous.", "nl.ok": "Merci, à très vite dans votre boîte mail.", "nl.err": "Indiquez une adresse e-mail valide, par exemple prenom@exemple.fr.",
+    legalLabel: "Informations légales", l1: "Mentions légales", l2: "CGV", l3: "Confidentialité", l4: "Livraison et retours", l5: "Contact",
+    "cart.title": "Votre panier", "cart.sub": "Sous-total", "cart.note": "Votre commande s'ouvre dans WhatsApp. Nous vous confirmons la commande et le moyen de paiement, puis nous expédions.", "cart.checkout": "Commander sur WhatsApp",
+    "cart.ship": "Livraison en point relais Mondial Relay", "ship.fr": "France", "ship.eu": "Europe", "cart.total": "Total",
+    "wa.hello": "Bonjour Bonbon Essence ! Je souhaite commander :", "wa.ship": "Livraison Mondial Relay", "wa.thanks": "Merci !", "wa.missing": "Démo : le numéro WhatsApp sera ajouté bientôt.",
+    "cart.empty": "Votre panier est vide.", "cart.see": "Voir la collection", "cart.demo": "Démo : le paiement Stripe sera branché à l'étape suivante.",
+    "a.search": "Rechercher", "a.cart": "Panier", "a.close": "Fermer", "search.ph": "Un parfum, une note… vanille, rose",
+    "search.none": q => `Aucun parfum trouvé pour « ${q} ». Essayez vanille, rose ou agrumes.`,
+    oil: "Huile parfumée · 15 ml", add: "Ajouter au panier", discover: n => `Découvrir ${n}`, view: n => `Voir ${n}`,
+    added: n => `${n} ajouté au panier`, remove: "Retirer", best: "Idéal pour", family: "Famille", notesT: "Notes olfactives", top: "Tête", heart: "Cœur", base: "Fond",
+    back: "Retour à la collection", howto: "Mode d'emploi", ingredients: "Ingrédients", shipping: "Livraison et retours",
+    alsoTitle: "Découvrez <em>aussi</em>", qtyLess: "Diminuer la quantité", qtyMore: "Augmenter la quantité", qtyLabel: "Quantité",
+    alt: n => `Flacon d'huile parfumée ${n}, 15 ml`, video: n => `Vidéo du flacon ${n}`
+  },
+  en: {
+    offer: () => { const P = CFG.prices; return `Bundle offer: 2 for ${euro(P.lot2)} · 3 for ${euro(P.lot3)} · 4 for ${euro(P.lot4)}, then ${euro(P.extra)} per bottle. Mix and match`; }, "cart.disc": "Bundle discount",
+    q5: "Can I return or exchange a bottle?", a5: () => `Yes, as long as the bottle is unopened. Write to us at <a href="mailto:${CFG.contact.email}">${CFG.contact.email}</a> and we will arrange the return or exchange.`,
+    skip: "Skip to content", demo: "Demo version · dotted-line texts to be confirmed",
+    navLabel: "Main navigation", "nav.home": "Home", "nav.collection": "Collection", "nav.story": "Our story",
+    "hero.eyebrow": "Luxury perfumed oils",
+    "hero.lead": "Born from a love for fragrance, beauty and heritage, Bonbon Essence brings together scents and traditions that become part of your everyday rituals.",
+    "hero.cta": "Discover our essence",
+    "col.eyebrow": "The collection", "col.title": "Four fragrances. <em>Four identities.</em>",
+    "frag.eyebrow": "The fragrances", "frag.title": "Every scent <em>tells a story.</em>",
+    "story.eyebrow": "Our story", "story.quote": "Our roots, our traditions, <em>our essences.</em>",
+    "story.text": "To us, heritage means our cultural roots and the traditions passed down to us: scents, gestures, rituals. Our perfumed oils are their first expression. Soon, we will also share more traditional products, such as thiouraye.",
+    "ph.story": "Draft to approve", "ph.ship": "Delivery times to be confirmed", "ph.inci": "Full ingredient list coming soon.", soldout: "Sold out",
+    "ritual.eyebrow": "The ritual", "ritual.title": "A drop. <em>A trail.</em> A memory.", "ritual.alt": "Applying perfumed oil to the arm",
+    "s1.h": "Apply", "s1.p": "One or two drops on your pulse points: wrists, neck, behind the ears.",
+    "s2.h": "Press", "s2.p": "Gently press, never rub, and let the oil melt into your skin.",
+    "s3.h": "Linger", "s3.p": "Concentrated and intimate, the scent stays close to your skin all day long.",
+    "faq.eyebrow": "FAQ", "faq.title": "All about <em>our oils.</em>",
+    q1: "What is a perfumed oil?", a1: "A fragrance concentrated in an oil base, with no alcohol. It sits directly on the skin and leaves a more intimate, enveloping trail than an eau de parfum.",
+    q2: "How do I apply it?", a2: "Use the dropper to apply one or two drops to your wrists, neck or décolleté, then gently press without rubbing.",
+    q3: "How much does a bottle hold?", a3: "Each bottle holds 15 ml (0.5 fl oz), with a dropper for precise application.",
+    q4: "How long does delivery take and what does it cost?", a4: () => `We ship to Mondial Relay pick-up points across Europe: ${euro(CFG.shipping.fr)} in France, ${euro(CFG.shipping.eu)} to other European countries. ${L(CFG.shipping.delay)}`,
+    claim: "More than a fragrance. <em>An essence.</em>",
+    "nl.label": "New scents and private offers", "nl.ph": "Your email", "nl.btn": "Subscribe",
+    "nl.note": "Unsubscribe in one click. Your data stays with us.", "nl.ok": "Thank you, see you soon in your inbox.", "nl.err": "Enter a valid email address, for example name@example.com.",
+    legalLabel: "Legal information", l1: "Legal notice", l2: "Terms of sale", l3: "Privacy", l4: "Shipping and returns", l5: "Contact",
+    "cart.title": "Your bag", "cart.sub": "Subtotal", "cart.note": "Your order opens in WhatsApp. We confirm your order and the payment method, then we ship.", "cart.checkout": "Order on WhatsApp",
+    "cart.ship": "Mondial Relay pick-up point delivery", "ship.fr": "France", "ship.eu": "Europe", "cart.total": "Total",
+    "wa.hello": "Hello Bonbon Essence! I would like to order:", "wa.ship": "Mondial Relay delivery", "wa.thanks": "Thank you!", "wa.missing": "Demo: the WhatsApp number will be added soon.",
+    "cart.empty": "Your bag is empty.", "cart.see": "See the collection", "cart.demo": "Demo: Stripe payment will be connected in the next step.",
+    "a.search": "Search", "a.cart": "Bag", "a.close": "Close", "search.ph": "A fragrance, a note… vanilla, rose",
+    "search.none": q => `No fragrance found for “${q}”. Try vanilla, rose or citrus.`,
+    oil: "Perfumed oil · 15 ml", add: "Add to bag", discover: n => `Discover ${n}`, view: n => `View ${n}`,
+    added: n => `${n} added to your bag`, remove: "Remove", best: "Best for", family: "Family", notesT: "Fragrance notes", top: "Top", heart: "Heart", base: "Base",
+    back: "Back to the collection", howto: "How to use", ingredients: "Ingredients", shipping: "Shipping and returns",
+    alsoTitle: "You may <em>also love</em>", qtyLess: "Decrease quantity", qtyMore: "Increase quantity", qtyLabel: "Quantity",
+    alt: n => `${n} perfumed oil bottle, 15 ml`, video: n => `Video of the ${n} bottle`
+  }
+};
+
+// Prodotti e impostazioni arrivano da content/*.json, modificabili dal pannello /admin.
+let PRODUCTS = [], CFG = null;
+
+let lang = "fr";
+try { const s = localStorage.getItem("be-lang"); if (s === "en" || s === "fr") lang = s; } catch (_) {}
+const $ = (s, el = document) => el.querySelector(s);
+const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+const t = (k, ...a) => { const v = T[lang][k] ?? T.fr[k]; return typeof v === "function" ? v(...a) : v; };
+const L = o => (o ? (o[lang] || o.fr || "") : "");
+const byId = id => PRODUCTS.find(p => p.id === id);
+const purl = id => `/parfums/${id}/`;
+const HOME_TITLE = document.title;
+const productFromPath = () => (location.pathname.match(/^\/parfums\/([a-z0-9-]+)\/?$/) || [])[1];
+let ship = "fr";
+const round2 = x => Math.round(x * 100) / 100;
+const unit = () => CFG.prices.unit;
+// Prezzi a lotti, profumi misti: valori in settings.json (1, 2, 3, 4 flaconi, poi prezzo per ogni flacone in più).
+const bundlePrice = n => {
+  const P = CFG.prices, lots = { 1: P.unit, 2: P.lot2, 3: P.lot3, 4: P.lot4 };
+  return round2(n <= 4 ? (lots[n] || 0) : P.lot4 + (n - 4) * P.extra);
+};
+const euro = n => new Intl.NumberFormat(lang === "fr" ? "fr-FR" : "en-IE", { style: "currency", currency: "EUR", minimumFractionDigits: n % 1 ? 2 : 0 }).format(n);
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const ON_NETLIFY = /(^|\.)netlify\.app$|(^|\.)bonbonessence\.(com|fr)$/.test(location.hostname);
+const media = (src, w) => (src && ON_NETLIFY && /\.(jpe?g|png|webp)$/i.test(src)) ? `/.netlify/images?url=/${src.replace(/^\/+/, "")}&w=${w}` : src;
+const img = (id, w = 800) => media(byId(id)?.image, w);
+const vid = id => byId(id)?.video || "";
+const arrow = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+const cardHTML = p => `
+  <article class="card" data-id="${p.id}">
+    <a class="card__media" href="${purl(p.id)}" aria-label="${t("view", p.name)}">
+      ${p.soldout ? `<span class="badge">${t("soldout")}</span>` : L(p.badge) ? `<span class="badge">${L(p.badge)}</span>` : ""}
+      <img src="${img(p.id, 640)}" alt="${t("alt", p.name)}" loading="lazy" width="621" height="625">
+      ${vid(p.id) ? `<video muted loop playsinline preload="none" aria-hidden="true" data-src="${vid(p.id)}"></video>` : ""}
+    </a>
+    <div class="card__row"><h3>${p.name}</h3><span class="price">${euro(unit())}</span></div>
+    <p class="card__tag">${L(p.tag)}</p>
+    <div class="card__actions">
+      <a class="btn" href="${purl(p.id)}">${t("discover", p.name)}</a>
+      ${p.soldout ? `<button class="btn btn--ghost" type="button" disabled>${t("soldout")}</button>` : `<button class="btn btn--ghost" type="button" data-add="${p.id}">${t("add")}</button>`}
+    </div>
+  </article>`;
+
+const wireCards = root => $$(".card", root).forEach(card => {
+  const v = $("video", card);
+  if (!v) return;
+  const play = () => { if (reduce) return; if (!v.src) v.src = v.dataset.src; v.play().then(() => card.classList.add("is-playing")).catch(() => {}); };
+  const stop = () => { v.pause(); card.classList.remove("is-playing"); };
+  if (matchMedia("(hover: hover)").matches) { card.addEventListener("mouseenter", play); card.addEventListener("mouseleave", stop); }
+  else new IntersectionObserver(([e]) => e.isIntersecting ? play() : stop(), { threshold: .8 }).observe(card);
+});
+
+const renderHome = () => {
+  const hero = $("#heroPill"), heroKey = PRODUCTS.slice(0, 4).map(p => p.image).join("|");
+  if (hero.dataset.key !== heroKey) {
+    hero.innerHTML = PRODUCTS.slice(0, 4).map((p, i) => `<img src="${img(p.id, 600)}" alt="" width="621" height="625" ${i ? "" : 'fetchpriority="high"'}>`).join("");
+    hero.dataset.key = heroKey;
+  }
+  $("#grid").innerHTML = PRODUCTS.map(cardHTML).join("");
+  wireCards($("#grid"));
+  $("#frags").innerHTML = PRODUCTS.map(p => `
+    <article class="frag">
+      <h3>${p.name}</h3>
+      <p class="frag__slogan">${L(p.slogan)}</p>
+      <span class="family">${L(p.family)}</span>
+      <p>${L(p.desc)}</p>
+      <p class="best"><strong>${t("best")} :</strong> ${L(p.best)}</p>
+      <a href="${purl(p.id)}">${t("discover", p.name)}</a>
+    </article>`).join("");
+};
+
+const renderProduct = id => {
+  const p = byId(id);
+  $("#viewProduct").innerHTML = `
+    <section class="product gutter" aria-labelledby="pName">
+      <div class="container">
+        <a class="back" href="/#collection"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>${t("back")}</a>
+        <div class="pgrid">
+          <div class="pmedia">
+            <div class="main"><img src="${img(p.id, 1000)}" alt="${t("alt", p.name)}" width="621" height="625"></div>
+            ${vid(p.id) ? `<div class="vid"><video src="${vid(p.id)}" poster="${img(p.id, 500)}" muted loop playsinline ${reduce ? "controls" : "autoplay"} aria-label="${t("video", p.name)}"></video></div>` : ""}
+          </div>
+          <div class="pinfo">
+            <span class="eyebrow">${t("oil")}</span>
+            <h1 id="pName">${p.name}</h1>
+            <p class="slogan">${L(p.slogan)}</p>
+            <p class="desc">${L(p.desc)}</p>
+            <p class="best"><strong>${t("best")} :</strong> ${L(p.best)}</p>
+            <div class="buy">
+              <span class="amount">${euro(unit())}<small>15 ml</small></span>
+              <div class="qty" role="group" aria-label="${t("qtyLabel")}">
+                <button type="button" data-step="-1" aria-label="${t("qtyLess")}">−</button>
+                <output id="pQty" aria-live="polite">1</output>
+                <button type="button" data-step="1" aria-label="${t("qtyMore")}">+</button>
+              </div>
+              ${p.soldout ? `<button class="btn" type="button" disabled>${t("soldout")}</button>` : `<button class="btn" type="button" data-add="${p.id}" data-qty="#pQty">${t("add")}</button>`}
+            </div>
+            <p class="offer-note">${t("offer")}</p>
+            <div class="facts">
+              <details open><summary>${t("notesT")}</summary><div><p><strong class="nk">${t("family")}</strong> ${L(p.family)}</p><p><strong class="nk">${t("top")}</strong> ${L(p.notes.top)}</p><p><strong class="nk">${t("heart")}</strong> ${L(p.notes.heart)}</p><p><strong class="nk">${t("base")}</strong> ${L(p.notes.base)}</p></div></details>
+              <details><summary>${t("howto")}</summary><div><p>${t("s1.p")}</p><p>${t("s2.p")}</p></div></details>
+              <details><summary>${t("ingredients")}</summary><div>${p.ingredients ? `<p>${esc(p.ingredients)}</p>` : `<p>${t("ph.inci")}</p>`}</div></details>
+              <details><summary>${t("shipping")}</summary><div><p>${t("a4")}</p><p>${t("a5")}</p></div></details>
+            </div>
+          </div>
+        </div>
+        <div class="more">
+          <div class="section-head"><h2>${t("alsoTitle")}</h2></div>
+          <div class="grid">${PRODUCTS.filter(o => o.id !== p.id).map(cardHTML).join("")}</div>
+        </div>
+      </div>
+    </section>`;
+  wireCards($("#viewProduct"));
+};
+
+/* Routing: /parfums/<id>/ = pagina del profumo; il resto = home, con scroll alla sezione indicata da #... */
+const route = () => {
+  const hid = location.hash.slice(1);
+  const id = productFromPath();
+  if (!id && byId(hid)) { location.replace(purl(hid)); return; } // vecchi link tipo /#sucree
+  if (id && !byId(id)) { location.replace("/"); return; }        // profumo nascosto o eliminato
+  const p = byId(id);
+  $("#viewHome").hidden = !!p;
+  $("#viewProduct").hidden = !p;
+  if (p) { renderProduct(id); document.title = `${p.name} · Bonbon Essence`; scrollTo(0, 0); $("#pName").focus?.(); }
+  else {
+    $("#viewProduct").innerHTML = ""; document.title = HOME_TITLE;
+    const el = hid && document.getElementById(hid);
+    if (el) requestAnimationFrame(() => el.scrollIntoView({ behavior: reduce ? "auto" : "smooth" }));
+  }
+};
+addEventListener("hashchange", route);
+
+/* Carrello */
+let cart = {};
+try { cart = JSON.parse(localStorage.getItem("be-cart")) || {}; } catch (_) {}
+const save = () => { try { localStorage.setItem("be-cart", JSON.stringify(cart)); } catch (_) {} };
+const toast = msg => { const el = $("#toast"); el.textContent = msg; el.classList.add("on"); clearTimeout(toast.t); toast.t = setTimeout(() => el.classList.remove("on"), 2600); };
+const renderCart = () => {
+  const ids = Object.keys(cart).filter(byId);
+  const n = ids.reduce((s, id) => s + cart[id], 0);
+  const full = round2(ids.reduce((s, id) => s + cart[id] * unit(), 0));
+  const total = bundlePrice(n), disc = round2(full - total);
+  $("#discRow").hidden = !(disc > 0); $("#cartDisc").textContent = "− " + euro(disc);
+  $("#count").hidden = !n; $("#count").textContent = n;
+  $("#openCart").setAttribute("aria-label", `${t("a.cart")}${n ? ` (${n})` : ""}`);
+  $("#cartTotal").textContent = euro(total);
+  const grand = n ? round2(total + CFG.shipping[ship]) : 0;
+  $("#cartGrand").textContent = euro(grand);
+  $$("[data-ship]").forEach(el => { el.textContent = euro(CFG.shipping[el.dataset.ship]); });
+  const msg = [t("wa.hello"), ...ids.map(id => `• ${cart[id]} × ${byId(id).name}`), "",
+    `${t("cart.sub")} : ${euro(total)}`, `${t("wa.ship")} (${t("ship." + ship)}) : ${euro(CFG.shipping[ship])}`, `${t("cart.total")} : ${euro(grand)}`, "", t("wa.thanks")].join("\n");
+  const co = $("#checkout");
+  co.href = `https://wa.me/${CFG.contact.whatsapp}?text=${encodeURIComponent(msg)}`;
+  co.setAttribute("aria-disabled", String(!n));
+  $("#cartList").innerHTML = n ? ids.map(id => { const p = byId(id); return `
+    <div class="line" data-line="${id}">
+      <img src="${img(id, 160)}" alt="">
+      <div><h3>${p.name}</h3>
+        <div class="qty" role="group" aria-label="${t("qtyLabel")} ${p.name}">
+          <button type="button" data-cstep="-1" aria-label="${t("qtyLess")}">−</button><output>${cart[id]}</output><button type="button" data-cstep="1" aria-label="${t("qtyMore")}">+</button>
+        </div>
+      </div>
+      <div style="text-align:right"><div class="price">${euro(round2(unit() * cart[id]))}</div><button class="rm" type="button" data-rm>${t("remove")}</button></div>
+    </div>`; }).join("") : `<div class="empty"><em>${t("cart.empty")}</em><a class="btn btn--ghost" href="/#collection" data-close>${t("cart.see")}</a></div>`;
+};
+const add = (id, q = 1) => { if (byId(id)?.soldout) return; cart[id] = Math.min(10, (cart[id] || 0) + q); save(); renderCart(); toast(t("added", byId(id).name)); };
+
+document.addEventListener("click", e => {
+  const a = e.target.closest("[data-add]");
+  if (a) { const q = a.dataset.qty ? +$(a.dataset.qty).textContent : 1; add(a.dataset.add, q); return; }
+  const s = e.target.closest("[data-step]");
+  if (s) { const o = $("#pQty"); o.textContent = Math.max(1, Math.min(10, +o.textContent + +s.dataset.step)); return; }
+  const line = e.target.closest("[data-line]");
+  if (line) {
+    const id = line.dataset.line, cs = e.target.closest("[data-cstep]");
+    if (e.target.closest("[data-rm]")) delete cart[id];
+    else if (cs) { cart[id] = Math.min(10, cart[id] + +cs.dataset.cstep); if (cart[id] < 1) delete cart[id]; }
+    else return;
+    save(); renderCart(); return;
+  }
+  const c = e.target.closest("[data-close]");
+  if (c) c.closest("dialog").close();
+  const r = e.target.closest(".result");
+  if (r) $("#search").close();
+});
+$("#openCart").addEventListener("click", () => $("#cart").showModal());
+$("#checkout").addEventListener("click", e => { if (!CFG.contact.whatsapp) { e.preventDefault(); toast(t("wa.missing")); } });
+$$("input[name=ship]").forEach(r => r.addEventListener("change", () => { ship = r.value; renderCart(); }));
+$$("dialog").forEach(d => d.addEventListener("click", e => { if (e.target === d) d.close(); }));
+
+/* Ricerca */
+const norm = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
+const esc = s => s.replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const runSearch = () => {
+  const q = $("#q").value.trim();
+  const list = q ? PRODUCTS.filter(p => norm(`${p.name} ${p.keys || ""} ${L(p.desc)} ${p.desc?.fr || ""} ${p.desc?.en || ""} ${p.family?.fr || ""} ${p.family?.en || ""} ${Object.values(p.notes || {}).map(n => (n.fr || "") + " " + (n.en || "")).join(" ")}`).includes(norm(q))) : PRODUCTS;
+  $("#results").innerHTML = list.length ? list.map(p => `
+    <a class="result" href="${purl(p.id)}"><img src="${img(p.id, 160)}" alt=""><div><h3>${p.name}</h3><p>${L(p.tag)}</p></div><span class="price">${euro(unit())}</span></a>`).join("")
+    : `<p class="none">${t("search.none", esc(q))}</p>`;
+};
+$("#openSearch").addEventListener("click", () => { $("#search").showModal(); runSearch(); $("#q").focus(); });
+$("#q").addEventListener("input", runSearch);
+
+
+/* Lingua */
+const applyLang = () => {
+  document.documentElement.lang = lang;
+  $$("[data-i18n]").forEach(el => { el.innerHTML = t(el.dataset.i18n); });
+  $$("[data-i18n-ph]").forEach(el => { el.placeholder = t(el.dataset.i18nPh); });
+  $$("[data-i18n-aria]").forEach(el => el.setAttribute("aria-label", t(el.dataset.i18nAria)));
+  $$("[data-i18n-alt]").forEach(el => { el.alt = t(el.dataset.i18nAlt); });
+  $$("[data-lang]").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === lang));
+  renderHome(); renderCart();
+  if (!$("#viewProduct").hidden) renderProduct(productFromPath());
+  if ($("#search").open) runSearch();
+};
+$$("[data-lang]").forEach(b => b.addEventListener("click", () => { lang = b.dataset.lang; try { localStorage.setItem("be-lang", lang); } catch (_) {} applyLang(); }));
+
+$("#year").textContent = new Date().getFullYear();
+{ const rv = $("#ritualVideo");
+  if (reduce) rv.controls = true;
+  else new IntersectionObserver(([e]) => { if (e.isIntersecting) rv.play().catch(() => {}); else rv.pause(); }, { threshold: .25 }).observe(rv); }
+
+const getJSON = u => fetch(u, { cache: "no-cache" }).then(r => { if (!r.ok) throw new Error(`${u}: ${r.status}`); return r.json(); });
+const boot = async () => {
+  try {
+    const pre = window.__CONTENT;
+    const [pr, st] = pre ? [pre.products, pre.settings] : await Promise.all([getJSON("/content/products.json"), getJSON("/content/settings.json")]);
+    PRODUCTS = (pr.products || []).filter(p => p.visible !== false && p.id && p.name);
+    CFG = st;
+  } catch (err) {
+    console.error(err);
+    $("#grid").innerHTML = `<p class="none">${lang === "en" ? "The collection could not be loaded. Please reload the page." : "La collection n'a pas pu être chargée. Rechargez la page."}</p>`;
+    return;
+  }
+  ["fr", "en"].forEach(l => {
+    T[l]["story.quote"] = () => L(CFG.story.quote);
+    T[l]["story.text"] = () => L(CFG.story.text);
+  });
+  const c = CFG.contact, [ig, tk] = $$(".socials a");
+  ig.href = c.instagram; tk.href = c.tiktok;
+  $("#mailLink").href = `mailto:${c.email}`; $("#mailLink").textContent = c.email;
+  applyLang();
+  route();
+};
+boot();
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# Netlify esegue build.mjs a ogni pubblicazione: copia site/ in dist/ e crea le pagine dei profumi.
+[build]
+  command = "node build.mjs"
+  publish = "dist"
+
+# Al lancio sul dominio: mettere "true" per togliere l'avviso demo e rendere il sito visibile su Google.
+[build.environment]
+  LAUNCHED = "false"
+
+# I contenuti cambiano dal pannello: sempre la versione aggiornata.
+[[headers]]
+  for = "/content/*"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

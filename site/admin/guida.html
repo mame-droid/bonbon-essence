@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Guida al pannello · Bonbon Essence</title>
+<link rel="icon" href="../assets/img/favicon.png" type="image/png">
+<link rel="stylesheet" href="/assets/fonts/fonts.css">
+<style>
+/* Guida in una colonna da 760px, stessi colori del sito */
+:root {
+  --bg: #FBF6F2; --surface: #FFFCF9; --nude: #F3DFCE; --ink: #3A2315; --muted: #6B5141; --bronze: #85562C; --gold: #C8964F; --line: #E6D3C4;
+  --display: "Cormorant Garamond", Georgia, serif; --body: "Jost", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 1.05rem; line-height: 1.65;
+  padding: 2.5rem max(16px, env(safe-area-inset-right, 0px)) 4rem max(16px, env(safe-area-inset-left, 0px)); }
+main { max-width: 760px; margin: 0 auto; display: grid; gap: 3rem; }
+header { display: grid; gap: .9rem; justify-items: start; }
+header img { width: 64px; height: 64px; }
+h1, h2 { font-family: var(--display); font-weight: 500; line-height: 1.1; margin: 0; text-wrap: balance; }
+h1 { font-size: clamp(2.2rem, 7vw, 3.2rem); }
+h1 em, h2 em { color: var(--bronze); }
+h2 { font-size: clamp(1.6rem, 5vw, 2.1rem); }
+p { margin: 0; }
+.lead { color: var(--muted); max-width: 60ch; }
+.label { font-size: .74rem; letter-spacing: .18em; text-transform: uppercase; color: var(--bronze); font-weight: 500; }
+section { display: grid; gap: 1rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+ol { margin: 0; padding-left: 1.3rem; display: grid; gap: .45rem; }
+li::marker { color: var(--bronze); font-weight: 500; }
+figure { margin: .4rem 0 0; display: grid; gap: .5rem; }
+figure img { width: 100%; height: auto; display: block; border-radius: 16px; border: 1px solid var(--line); box-shadow: 0 18px 40px -30px rgba(58,35,21,.5); background: #fff; }
+figcaption { font-size: .9rem; color: var(--muted); }
+.btnname { display: inline-block; padding: .05rem .5rem; border-radius: 6px; background: var(--nude); font-weight: 500; white-space: nowrap; }
+.tip { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 1rem 1.2rem; color: var(--muted); }
+.tip strong { color: var(--ink); font-weight: 500; }
+.links { display: flex; flex-wrap: wrap; gap: .6rem; }
+.links a { display: inline-flex; align-items: center; min-height: 44px; padding: .6rem 1.2rem; border-radius: 999px; background: var(--ink); color: var(--bg); text-decoration: none; font-size: .82rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; }
+.links a.ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+a:focus-visible { outline: 2px solid var(--bronze); outline-offset: 3px; }
+code { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: .9em; background: var(--nude); padding: .05rem .35rem; border-radius: 5px; }
+ul.list { margin: 0; padding-left: 1.2rem; display: grid; gap: .45rem; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="../assets/img/logo.webp" alt="" width="64" height="64">
+    <span class="label">Bonbon Essence · Pannello</span>
+    <h1>Gestire il sito <em>da sola</em></h1>
+    <p class="lead">Dal pannello cambi prezzi, spedizioni, foto e testi, aggiungi profumi o li segni come esauriti. Quando pubblichi, il sito si aggiorna da solo in circa un minuto.</p>
+    <div class="links">
+      <a href="/admin/">Apri il pannello</a>
+      <a class="ghost" href="/">Vai al sito</a>
+    </div>
+  </header>
+
+  <section aria-labelledby="s-accesso">
+    <span class="label">Prima volta</span>
+    <h2 id="s-accesso">Entrare nel pannello</h2>
+    <ol>
+      <li>Apri <code>bonbon-essence-anteprima.netlify.app/admin</code>. Ti conviene salvarlo tra i preferiti.</li>
+      <li>Premi <span class="btnname">Accedi con GitHub</span> ed entra con il tuo account GitHub.</li>
+      <li>La prima volta GitHub ti chiede di autorizzare l'accesso: conferma.</li>
+    </ol>
+    <figure><img src="guida/01-accesso.webp" alt="Pagina di accesso con il logo Bonbon Essence e il pulsante Accedi con GitHub" width="1180" height="973" loading="lazy"><figcaption>La pagina di accesso.</figcaption></figure>
+  </section>
+
+  <section aria-labelledby="s-sezioni">
+    <span class="label">Come è organizzato</span>
+    <h2 id="s-sezioni">Le due sezioni</h2>
+    <ul class="list">
+      <li><strong>Profumi:</strong> tutto quello che riguarda ogni profumo (nome, foto, video, testi, note, ingredienti, esaurito).</li>
+      <li><strong>Prezzi, spedizioni e testi:</strong> prezzi a lotti, costi e tempi di spedizione, contatti e la tua storia.</li>
+    </ul>
+    <figure><img src="guida/02-sezioni.webp" alt="Schermata iniziale del pannello con le sezioni Profumi e Prezzi, spedizioni e testi" width="1400" height="902" loading="lazy"><figcaption>Scegli la sezione a sinistra, poi clicca sul riquadro a destra per aprirla.</figcaption></figure>
+  </section>
+
+  <section aria-labelledby="s-prezzi">
+    <span class="label">Esempio</span>
+    <h2 id="s-prezzi">Cambiare un prezzo</h2>
+    <ol>
+      <li>Apri <strong>Prezzi, spedizioni e testi</strong> → <strong>Impostazioni del negozio</strong>.</li>
+      <li>Cambia il numero che ti interessa. Per i decimali usa il punto: <code>12.99</code>.</li>
+      <li>In alto compare <span class="btnname">MODIFICHE NON SALVATE</span>: è normale, vuol dire che non hai ancora pubblicato.</li>
+    </ol>
+    <figure><img src="guida/03-prezzi.webp" alt="Modulo dei prezzi con i campi 1, 2, 3 e 4 flaconi e Ogni flacone oltre il 4°" width="1400" height="902" loading="lazy"><figcaption>I prezzi valgono per tutti i profumi, anche mischiati. Il carrello calcola le offerte da solo.</figcaption></figure>
+    <p>Nella stessa pagina, più in basso, trovi la <strong>spedizione</strong> (Francia ed Europa, con i tempi di consegna) e i <strong>contatti</strong> (WhatsApp per gli ordini, email, Instagram, TikTok).</p>
+  </section>
+
+  <section aria-labelledby="s-pubblica">
+    <span class="label">Importante</span>
+    <h2 id="s-pubblica">Pubblicare le modifiche</h2>
+    <ol>
+      <li>Premi <span class="btnname">Pubblica</span> in alto, poi <span class="btnname">Pubblica ora</span>.</li>
+      <li>Quando compare <span class="btnname">MODIFICHE SALVATE</span>, la modifica è registrata.</li>
+      <li>Aspetta circa un minuto e ricarica il sito: vedrai il cambiamento.</li>
+    </ol>
+    <figure><img src="guida/04-pubblica.webp" alt="Menu del pulsante Pubblica aperto, con la voce Pubblica ora" width="1400" height="902" loading="lazy"><figcaption>Finché non premi Pubblica ora, il sito non cambia.</figcaption></figure>
+    <p class="tip"><strong>Niente paura di sbagliare:</strong> ogni pubblicazione viene salvata, quindi qualsiasi modifica si può annullare e si torna alla versione precedente.</p>
+  </section>
+
+  <section aria-labelledby="s-esaurito">
+    <span class="label">Profumi</span>
+    <h2 id="s-esaurito">Segnare un profumo esaurito o nasconderlo</h2>
+    <ol>
+      <li>Apri <strong>Profumi</strong> → <strong>Profumi in vendita</strong>.</li>
+      <li>Clicca sulla freccia <strong>›</strong> accanto al profumo per aprirlo.</li>
+      <li>Attiva <strong>Esaurito</strong> per mostrarlo con la scritta "Épuisé" senza che si possa ordinare. Disattiva <strong>Visibile sul sito</strong> per toglierlo del tutto.</li>
+      <li>Premi <span class="btnname">Pubblica</span> → <span class="btnname">Pubblica ora</span>.</li>
+    </ol>
+    <figure><img src="guida/05-profumi.webp" alt="Elenco dei quattro profumi con il pulsante Aggiungi profumo" width="1400" height="902" loading="lazy"><figcaption>L'elenco dei profumi. Con le due lineette in alto in ogni riquadro puoi trascinarli per cambiare l'ordine sul sito.</figcaption></figure>
+    <figure><img src="guida/06-esaurito.webp" alt="Scheda del profumo Sucrée aperta, con gli interruttori Visibile sul sito ed Esaurito" width="1400" height="902" loading="lazy"><figcaption>Gli interruttori sono blu quando sono attivi.</figcaption></figure>
+    <p class="tip"><strong>Attenzione alla X</strong> in alto a destra di ogni riquadro: elimina il profumo. Se vuoi solo toglierlo per un po', usa "Visibile sul sito".</p>
+  </section>
+
+  <section aria-labelledby="s-foto">
+    <span class="label">Profumi</span>
+    <h2 id="s-foto">Cambiare foto o video</h2>
+    <ol>
+      <li>Apri il profumo e scorri fino a <strong>Foto principale</strong> o <strong>Video</strong>.</li>
+      <li>Premi <span class="btnname">Scegli un'altra immagine</span> (o "Scegli un altro file" per il video), poi <strong>Carica</strong> e scegli il file dal computer o dal telefono.</li>
+      <li>Seleziona il file appena caricato e conferma, poi pubblica.</li>
+    </ol>
+    <figure><img src="guida/07-foto.webp" alt="Campi Foto principale e Video di un profumo, con i pulsanti per sostituirli" width="1400" height="902" loading="lazy"><figcaption>Foto quadrate, se possibile sotto 1 MB. Video verticali e corti, sotto 3 MB.</figcaption></figure>
+  </section>
+
+  <section aria-labelledby="s-nuovo">
+    <span class="label">Profumi</span>
+    <h2 id="s-nuovo">Aggiungere un nuovo profumo</h2>
+    <ol>
+      <li>In <strong>Profumi in vendita</strong> premi <span class="btnname">Aggiungi profumo +</span>.</li>
+      <li>Compila nome, foto e testi. Per ogni testo c'è il francese e l'inglese.</li>
+      <li>In <strong>Indirizzo della pagina</strong> scrivi il nome in minuscolo, senza accenti né spazi, con i trattini. Per esempio "Rose Dorée" diventa <code>rose-doree</code>.</li>
+      <li>Pubblica. Il nuovo profumo compare nella collezione, nella ricerca e nel carrello.</li>
+    </ol>
+    <p class="tip"><strong>Non sai scrivere un testo in inglese?</strong> Scrivilo in francese anche nel campo inglese e mandamelo: lo traduco io.</p>
+  </section>
+
+  <section aria-labelledby="s-storia">
+    <span class="label">Testi</span>
+    <h2 id="s-storia">Scrivere la tua storia</h2>
+    <ol>
+      <li>Apri <strong>Prezzi, spedizioni e testi</strong> e scorri fino a <strong>Notre histoire</strong>.</li>
+      <li><strong>Frase grande</strong> è il titolo della sezione. Per mettere alcune parole in corsivo dorato, scrivile così: <code>&lt;em&gt;nos essences.&lt;/em&gt;</code></li>
+      <li><strong>Testo</strong> è il paragrafo sotto. Scrivi la versione francese e quella inglese, poi pubblica.</li>
+    </ol>
+    <figure><img src="guida/08-storia.webp" alt="Campi Notre histoire con Frase grande e Testo in francese e inglese" width="1400" height="902" loading="lazy"><figcaption>La sezione "Notre histoire", in fondo alla pagina delle impostazioni.</figcaption></figure>
+  </section>
+
+  <section aria-labelledby="s-consigli">
+    <span class="label">In breve</span>
+    <h2 id="s-consigli">Qualche consiglio</h2>
+    <ul class="list">
+      <li>Il pannello funziona anche dal telefono, ma da computer è più comodo.</li>
+      <li>Se dopo la pubblicazione il sito non cambia, aspetta un altro minuto e ricarica la pagina.</li>
+      <li><strong>Ingredienti:</strong> copiali esattamente dai documenti del fornitore. Finché il campo è vuoto, il sito scrive che la lista arriva presto.</li>
+      <li>Per qualsiasi dubbio o se qualcosa non torna, scrivimi e lo sistemiamo insieme.</li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

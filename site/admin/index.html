@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Bonbon Essence · Gestione</title>
+  <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+  <style>
+    #guide-link { position: fixed; left: max(16px, env(safe-area-inset-left, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 9999;
+      display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; padding: .6rem 1.1rem; border-radius: 999px;
+      background: #3A2315; color: #FBF6F2; font: 500 15px/1 system-ui, sans-serif; text-decoration: none; box-shadow: 0 10px 24px -10px rgba(58, 35, 21, .6); }
+    #guide-link:focus-visible { outline: 2px solid #C8964F; outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <!-- Pannello di amministrazione (Decap CMS): modifica i file in /site/content e carica foto/video in /site/assets/uploads -->
+  <script src="https://unpkg.com/decap-cms@3.17.3/dist/decap-cms.js"></script>
+  <script>
+    // Bottone fisso "Guida": il pannello riscrive la pagina all'avvio, quindi lo rimettiamo se sparisce.
+    (function () {
+      function addGuideLink() {
+        if (document.getElementById("guide-link")) return;
+        var a = document.createElement("a");
+        a.id = "guide-link"; a.href = "/admin/guida.html"; a.target = "_blank"; a.rel = "noopener";
+        a.textContent = "? Guida";
+        document.body.appendChild(a);
+      }
+      addGuideLink();
+      new MutationObserver(addGuideLink).observe(document.body, { childList: true });
+    })();
+  </script>
+</body>
+</html>

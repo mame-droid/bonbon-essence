@@ -1,0 +1,196 @@
+{
+  "products": [
+    {
+      "id": "sucree",
+      "name": "Sucrée",
+      "visible": true,
+      "soldout": false,
+      "badge": {
+        "fr": "La signature",
+        "en": "The signature"
+      },
+      "tag": {
+        "fr": "La signature.",
+        "en": "The signature."
+      },
+      "slogan": {
+        "fr": "Saf ni tangal !",
+        "en": "Saf ni tangal!"
+      },
+      "family": {
+        "fr": "Fruité gourmand",
+        "en": "Fruity gourmand"
+      },
+      "notes": {
+        "top": {
+          "fr": "Sucre filé, fruits rouges, agrumes confits",
+          "en": "Spun sugar, red berries, candied citrus"
+        },
+        "heart": {
+          "fr": "Guimauve, fraise, barbe à papa, fleurs douces",
+          "en": "Marshmallow, strawberry, cotton candy, soft florals"
+        },
+        "base": {
+          "fr": "Caramel, sirop de vanille, musc blanc doux",
+          "en": "Caramel, vanilla syrup, soft white musk"
+        }
+      },
+      "desc": {
+        "en": "Our signature fragrance. Sweet and delicious with a soft, candy-like character, Sucrée is made for those who love fragrances that feel joyful, feminine and effortlessly addictive.",
+        "fr": "Notre parfum signature. Doux et gourmand, au caractère tendre de bonbon, Sucrée est fait pour celles et ceux qui aiment les parfums joyeux, féminins et délicieusement addictifs."
+      },
+      "best": {
+        "en": "those who love sweet, playful and gourmand-inspired fragrances.",
+        "fr": "celles et ceux qui aiment les parfums sucrés, espiègles et gourmands."
+      },
+      "ingredients": "",
+      "image": "/assets/img/sucree.webp",
+      "video": "/assets/video/sucree.mp4",
+      "keys": "bonbon candy sucre sugar gourmand sweet sucré signature"
+    },
+    {
+      "id": "si-desio",
+      "name": "Si Desio",
+      "visible": true,
+      "soldout": false,
+      "badge": {
+        "fr": "",
+        "en": ""
+      },
+      "tag": {
+        "fr": "Le désir en flacon.",
+        "en": "Desire in a bottle."
+      },
+      "slogan": {
+        "fr": "Le désir en flacon.",
+        "en": "Desire in a bottle."
+      },
+      "family": {
+        "fr": "Chypré fruité",
+        "en": "Fruity chypre"
+      },
+      "notes": {
+        "top": {
+          "fr": "Nectar de cassis, mandarine, bergamote",
+          "en": "Blackcurrant nectar, mandarin orange, bergamot"
+        },
+        "heart": {
+          "fr": "Rose de mai, freesia, jasmin d'Égypte, néroli",
+          "en": "May rose, freesia, Egyptian jasmine, neroli"
+        },
+        "base": {
+          "fr": "Vanille, patchouli, ambroxan, bois chauds",
+          "en": "Vanilla, patchouli, ambroxan, warm woods"
+        }
+      },
+      "desc": {
+        "en": "A sensual and sophisticated fragrance with a burst of juicy blackcurrant, softened by delicate rose and freesia. Creamy vanilla, soft patchouli and blond woods create a warm, radiant finish that feels feminine and comforting.",
+        "fr": "Un parfum sensuel et sophistiqué qui s'ouvre sur un éclat de cassis juteux, adouci par une rose délicate et le freesia. Une vanille crémeuse, un patchouli tout en douceur et des bois blonds composent un fond chaud et lumineux, féminin et réconfortant."
+      },
+      "best": {
+        "en": "those who love sweet, berry-rich and warm fragrances with a sophisticated touch.",
+        "fr": "celles et ceux qui aiment les parfums sucrés, fruités et chaleureux, avec une touche de sophistication."
+      },
+      "ingredients": "",
+      "image": "/assets/img/si-desio.webp",
+      "video": "/assets/video/si-desio.mp4",
+      "keys": "cassis blackcurrant rose freesia vanille vanilla patchouli bois woods fruité"
+    },
+    {
+      "id": "mademoiselle-paris",
+      "name": "Mademoiselle Paris",
+      "visible": true,
+      "soldout": false,
+      "badge": {
+        "fr": "",
+        "en": ""
+      },
+      "tag": {
+        "fr": "L'élégance parisienne, naturelle et assurée.",
+        "en": "Parisian elegance, effortless and confident."
+      },
+      "slogan": {
+        "fr": "L'élégance parisienne, naturelle et assurée.",
+        "en": "Parisian elegance, effortless and confident."
+      },
+      "family": {
+        "fr": "Floral ambré",
+        "en": "Amber floral"
+      },
+      "notes": {
+        "top": {
+          "fr": "Orange, mandarine, bergamote, fleur d'oranger",
+          "en": "Orange, mandarin orange, bergamot, orange blossom"
+        },
+        "heart": {
+          "fr": "Rose de Turquie, jasmin, mimosa, ylang-ylang",
+          "en": "Turkish rose, jasmine, mimosa, ylang-ylang"
+        },
+        "base": {
+          "fr": "Patchouli, musc blanc, vanille, vétiver, fève tonka",
+          "en": "Patchouli, white musk, vanilla, vetiver, tonka bean"
+        }
+      },
+      "desc": {
+        "en": "A refined and feminine fragrance with a crisp, elegant character. Bright citrus notes meet a soft floral heart, settling into a clean, subtly powdery and sophisticated scent.",
+        "fr": "Un parfum raffiné et féminin au caractère net et élégant. Des notes d'agrumes lumineuses rencontrent un cœur floral délicat, avant de laisser place à un sillage propre, subtilement poudré et sophistiqué."
+      },
+      "best": {
+        "en": "those who love fresh, polished and versatile fragrances that feel effortlessly elegant.",
+        "fr": "celles et ceux qui aiment les parfums frais, soignés et polyvalents, d'une élégance naturelle."
+      },
+      "ingredients": "",
+      "image": "/assets/img/mademoiselle-paris.webp",
+      "video": "/assets/video/mademoiselle-paris.mp4",
+      "keys": "agrumes citrus floral fleurs poudré powdery frais fresh paris chic"
+    },
+    {
+      "id": "vanilla",
+      "name": "Vanilla",
+      "visible": true,
+      "soldout": false,
+      "badge": {
+        "fr": "",
+        "en": ""
+      },
+      "tag": {
+        "fr": "Chaleureux. Doux. Réconfortant.",
+        "en": "Warm. Soft. Comforting."
+      },
+      "slogan": {
+        "fr": "Chaleureux. Doux. Réconfortant.",
+        "en": "Warm. Soft. Comforting."
+      },
+      "family": {
+        "fr": "Ambré vanillé · Gourmand",
+        "en": "Amber vanilla · Gourmand"
+      },
+      "notes": {
+        "top": {
+          "fr": "Fleur de vanille, crème fouettée, amande douce",
+          "en": "Vanilla blossom, whipped cream, sweet almond"
+        },
+        "heart": {
+          "fr": "Vanille Bourbon, caramel, héliotrope",
+          "en": "Bourbon vanilla, caramel, heliotrope"
+        },
+        "base": {
+          "fr": "Gousse de vanille de Madagascar, musc blanc, ambre chaud, santal",
+          "en": "Madagascar vanilla bean, white musk, warm amber, sandalwood"
+        }
+      },
+      "desc": {
+        "en": "A smooth and comforting vanilla fragrance with a sweet, creamy character. Soft and enveloping, it leaves a warm trail on the skin that feels familiar, cozy and irresistible.",
+        "fr": "Une vanille douce et réconfortante, au caractère sucré et crémeux. Tendre et enveloppante, elle laisse sur la peau un sillage chaud, familier, cocooning et irrésistible."
+      },
+      "best": {
+        "en": "vanilla lovers who enjoy sweet, soft and comforting scents.",
+        "fr": "les amoureux de la vanille qui aiment les senteurs sucrées, douces et réconfortantes."
+      },
+      "ingredients": "",
+      "image": "/assets/img/vanilla.webp",
+      "video": "/assets/video/vanilla.mp4",
+      "keys": "vanille vanilla crème creamy chaud warm doux soft cocooning"
+    }
+  ]
+}
